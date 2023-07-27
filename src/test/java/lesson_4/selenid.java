@@ -4,10 +4,11 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class selenid {
+public class Selenid {
     @BeforeAll
     static void beforeAll() {
         Configuration.browser = "chrome";
@@ -20,7 +21,7 @@ public class selenid {
     @Test
     void fillRegFormTest() {
         open("/selenide/selenide");
-        //Откройте страницу Selenide в Github
+        $("#wiki-tab").click();
         //Перейдите в раздел Wiki проекта
         // Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         //Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
