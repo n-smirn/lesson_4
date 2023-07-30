@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class Selenid {
+public class SelenidTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.browser = "chrome";
@@ -22,7 +22,7 @@ public class Selenid {
     }
 
     @Test
-    void selenidWikiTest() {
+    void searchJUnit5CodeExampleTest() {
         String JUnit5CodeExample = "@ExtendWith({SoftAssertsExtension.class})\n" +
                 "class Tests {\n" +
                 "  @Test\n" +
@@ -35,10 +35,11 @@ public class Selenid {
                 "  }\n" +
                 "}";
 
-                open("/selenide/selenide");
+        open("/selenide/selenide");
         $("#wiki-tab").click();
         $(".js-wiki-more-pages-link").click();
         $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
         $("#wiki-pages-box").$(byText("SoftAssertions")).click();
         $(".markdown-body").$(byText("3. Using JUnit5 extend test class:")).sibling(0).shouldHave(text(JUnit5CodeExample));
-    }}
+    }
+}
